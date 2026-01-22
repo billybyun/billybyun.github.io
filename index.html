@@ -1,31 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <meta charset = 'utf-8'/>
-      <title>Yoon-Woo Billy Byun</title>
-      <link rel = 'stylesheet' href = 'style.css'>
-  </head>
-  <body>
-    <ul class = 'menu'>
-        <li>< a > </li>
-    </ul>
-
-    <h1> Hola, this is YoonWoo. </h1>
-    <p>HackDuke's personal website seminar. This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.This is a sentence.</p>
-    <p>You can find me at <a href = 'https://www.linkedin.com/in/yoon-woo-billy-byun-10078a36/' target = '_blank'>  linked-in </a>
-      You can find me at <a href = 'https://github.com/billybyun' target = '_blank'>  github </a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Billy Byun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- While you're still building, keep this so Google doesn't index it -->
+  <meta name="robots" content="noindex">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      padding: 24px 26px;
+      max-width: 520px;
+      border-radius: 18px;
+      border: 1px solid #1f2937;
+      background: radial-gradient(circle at top, #111827, #020617 55%);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+    }
+    p {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+    .links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .links a {
+      color: #c7d2fe;
+      text-decoration: none;
+    }
+    .note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Billy Byun</h1>
+    <p>
+      Senior ML Neuroscientist working on robotics, multimodal AI, and
+      brain–computer interfaces.
     </p>
-    <p>You can find me at <a href = 'index.html' target = '_blank'>  linkedin </a> </p>
-
-    <div class = 'projects'>
-        <div class = 'column' ></div>
-        <div class = 'column' style = 'background-color: red;'>
-          <p> Project Three </p>
-        </div>
-        <div class = 'column' ></div>
-        <div class = 'column' ></div>
-        <div class = 'column' ></div>
-        <div class = 'column' ></div>
+    <p class="note">
+      A more detailed portfolio site is in progress. In the meantime, you can
+      find my work here:
+    </p>
+    <div class="links">
+      <a href="https://github.com/billybyun" target="_blank">GitHub</a>
+      <!-- replace these with your real URLs when you want -->
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
     </div>
-  </body>
+  </div>
+</body>
 </html>
+
