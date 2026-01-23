@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Billy Byun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Keep this while you're still iterating; remove when ready to be indexed -->
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .location {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 0.9rem;
+    }
+
+    .sidebar-links li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    .sidebar-links span.icon {
+      font-size: 0.9rem;
+    }
+
+    /* Main content */
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .top-nav {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .top-nav a {
+      color: var(--text-muted);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    .top-nav a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .top-nav a.primary {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .section {
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 16px 18px 14px;
+    }
+
+    .section h2 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .section p {
+      margin: 4px 0 8px;
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    .news-list {
+      margin: 4px 0 0 18px;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .news-list li + li {
+      margin-top: 3px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .project-card {
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      background: #ffffff;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .tag-row {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .subheading {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+
+    ul.bullets {
+      margin: 0 0 4px 18px;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    ul.bullets li + li {
+      margin-top: 2px;
+    }
+
+    footer {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="layout">
+      <!-- Sidebar (like Hang's left column) -->
+      <aside class="sidebar">
+        <div class="avatar">
+          <!-- Replace with a real image if you like -->
+          <!-- <img src="billy.jpg" alt="Photo of Billy Byun"> -->
+        </div>
+        <div class="name">Billy Byun</div>
+        <div class="role">Senior ML Neuroscientist</div>
+        <div class="location">Bay Area, CA</div>
+
+        <ul class="sidebar-links">
+          <li>
+            <span class="icon">🏢</span>
+            <span>BCI &amp; neural decoding at Precision Neuroscience</span>
+          </li>
+          <li>
+            <span class="icon">🤖</span>
+            <span>Robotics · Multimodal AI · BCI</span>
+          </li>
+          <li>
+            <span class="icon">🐙</span>
+            <a href="https://github.com/billybyun" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <span class="icon">🔗</span>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <span class="icon">🎓</span>
+            <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+          </li>
+          <li>
+            <span class="icon">📄</span>
+            <a href="cv.pdf" target="_blank">CV (PDF)</a>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <span>youremail [at] domain [dot] com</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main content -->
+      <main class="content">
+        <!-- Top nav with anchors -->
+        <nav class="top-nav">
+          <a href="#projects" class="primary">Projects</a>
+          <a href="#tutorials">Tutorials</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <!-- About -->
+        <section class="section" id="about">
+          <h2>About Me</h2>
+          <p>
+            I’m a machine learning neuroscientist working on brain–computer
+            interfaces, robotics, and multimodal models. I build systems that
+            connect neural activity, sensor data, and language to control
+            real-world devices such as robot arms, cursors, and communication
+            interfaces.
+          </p>
+          <p>
+            My work spans invasive BCI in clinical settings, sim2real robotics,
+            and VLM/VLA-style policies. I care about reliability and end-to-end
+            systems: from data collection and preprocessing to PyTorch and JAX
+            models and real-time deployments.
+          </p>
+        </section>
+
+        <!-- News (Hang-style) -->
+        <section class="section" id="news">
+          <h2>News</h2>
+          <ul class="news-list">
+            <li><strong>2025</strong> – Working on sim2real pick-and-place with language-conditioned control for a low-cost robot arm.</li>
+            <li><strong>2024</strong> – Led neural decoding work for an invasive BCI system at Precision Neuroscience.</li>
+            <li><strong>2024</strong> – Started organizing notes on RL, imitation learning, and multimodal models as public tutorials.</li>
+          </ul>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <div class="project-title">
+                Language-Conditioned Pick-and-Place (VLA-style)
+              </div>
+              <div class="project-desc">
+                Robot arm policies trained in simulation that follow natural
+                language instructions like “move the red block to the left bin,”
+                using a combination of visual features, text embeddings, and
+                state. Mix of behavior cloning and RL with domain randomization
+                for sim2real.
+              </div>
+              <div class="tag-row">
+                <span class="tag">Robotics</span>
+                <span class="tag">Sim2Real</span>
+                <span class="tag">VLM/VLA</span>
+                <span class="tag">PyTorch</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title">
+                Neural-to-Text Prototype for BCI
+              </div>
+              <div class="project-desc">
+                A pipeline that decodes discrete symbols from neural activity and
+                feeds them into a language model to produce smoother text. Focus
+                on latency, robustness, and how much the LM can correct noisy
+                neural predictions.
+              </div>
+              <div class="tag-row">
+                <span class="tag">BCI</span>
+                <span class="tag">Neural Decoding</span>
+                <span class="tag">Multimodal LLM</span>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title">
+                RL &amp; Imitation Learning Playground (PyTorch + JAX)
+              </div>
+              <div class="project-desc">
+                Small suite of environments for experimenting with behavior
+                cloning, actor–critic, and PPO-style methods in both PyTorch and
+                JAX. Used as a sandbox for testing algorithm ideas and preparing
+                for systems/RL interviews.
+              </div>
+              <div class="tag-row">
+                <span class="tag">RL</span>
+                <span class="tag">Imitation Learning</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">JAX</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tutorials -->
+        <section class="section" id="tutorials">
+          <h2>Tutorials & Notes</h2>
+          <p>
+            I’m collecting structured notes and mini-tutorials for myself and
+            others — part interview prep, part long-term knowledge base.
+          </p>
+
+          <div class="subheading">Core DL & Frameworks</div>
+          <ul class="bullets">
+            <li><strong>PyTorch from Scratch</strong> – custom training loops, Datasets/DataLoaders, schedulers, gradient clipping, and logging. [WIP]</li>
+            <li><strong>JAX for Research & Sim</strong> – functional training steps with <code>jit</code>, <code>vmap</code>, and <code>grad</code>; when JAX is preferable to PyTorch. [WIP]</li>
+            <li><strong>PySpark for ML Logs</strong> – aggregating large-scale training & rollout logs, performance monitoring, and Parquet pipelines. [WIP]</li>
+          </ul>
+
+          <div class="subheading">RL & Imitation Learning</div>
+          <ul class="bullets">
+            <li><strong>Behavior Cloning (BC)</strong> – supervised policies from expert trajectories; failure modes and DAgger-style fixes. [WIP]</li>
+            <li><strong>Policy Gradients & PPO-ish Algorithms</strong> – from REINFORCE to actor–critic and clipped objectives in PyTorch. [WIP]</li>
+          </ul>
+
+          <div class="subheading">Robotics, Sim2Real & Real2Sim</div>
+          <ul class="bullets">
+            <li><strong>Domain Randomization</strong> – lighting, textures, object placement, and small physics changes. [WIP]</li>
+            <li><strong>Real2Sim System Identification</strong> – using real trajectories to tune simulation parameters and dynamics models. [WIP]</li>
+          </ul>
+
+          <div class="subheading">Multimodal & BCI</div>
+          <ul class="bullets">
+            <li><strong>VLMs & VLA Policies</strong> – CLIP-style contrastive learning and language-conditioned control. [WIP]</li>
+            <li><strong>Neural Decoding Pipelines</strong> – from raw ECoG/iEEG to features, models, and real-time output. [WIP]</li>
+          </ul>
+
+          <div class="subheading">Foundations I Recommend</div>
+          <ul class="bullets">
+            <li>
+              <strong>Modern Robotics (Lynch &amp; Park)</strong> – textbook and course material for rigid body motions, kinematics, and control.  
+              <a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/introduction-to-rigid-body-motions/#department" target="_blank">modernrobotics.northwestern.edu</a>
+            </li>
+            <li>
+              <strong>3Blue1Brown</strong> – visual, intuition-first explanations of linear algebra, calculus, probability, and neural networks.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Work -->
+        <section class="section" id="work">
+          <h2>Work</h2>
+          <p>
+            I’ve spent the last several years building real-world ML systems for
+            brain–computer interfaces, robotics, and multimodal AI, working
+            closely with clinicians and engineers.
+          </p>
+          <ul class="bullets">
+            <li>
+              <strong>Senior ML Neuroscientist – Precision Neuroscience</strong><br>
+              Invasive BCI systems for paralyzed individuals; neural feature
+              engineering, PyTorch models, and real-time decoding in the OR and ICU.
+            </li>
+            <li>
+              <strong>Robotics & Sim2Real Side Projects</strong><br>
+              Low-cost arms, Isaac-like simulators, language-conditioned policies,
+              and tuning simulation to match real-world behavior.
+            </li>
+            <li>
+              <strong>Academic Research in Neural Interfaces & ML</strong><br>
+              Motor & speech decoding, high-dimensional time series, and connecting
+              neural recordings to behavior in animal and human studies.
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Billy Byun · Robotics · Multimodal AI · BCI
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
