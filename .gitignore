@@ -1,0 +1,9 @@
+# Cursor / VSCode workspace files (personal)
+*.code-workspace
+
+# Editor settings (optional: keep if you don't want to share editor config)
+.vscode/
+
+# OS cruft
+.DS_Store
+Thumbs.db
