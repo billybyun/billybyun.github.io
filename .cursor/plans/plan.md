@@ -106,3 +106,21 @@ billybyun.github.io/
 - Robotics and BCI domain pages
 - Main page redesign
 - Tagging system, blog engine
+
+---
+
+## Future: Work Artifacts (LinkedIn-style)
+
+**Goal:** Add artifact cards under each role in the Work section, like LinkedIn – thumbnail image, title, and link to external article/paper/video.
+
+**Examples from your LinkedIn:**
+- Precision Neuroscience: "Exclusive | Inside the Operating Room: Doctors Test a Revolutionary Brain-Computer Implant" (article/video)
+- Nature Biomedical Engineering paper (publication)
+
+**Implementation sketch:**
+- Restructure Work section: each role becomes a block with description + optional `artifact` list
+- Each artifact: `<a href="...">` wrapping a card with thumbnail (`<img>` or `background-image`), title, and external-link icon
+- Store thumbnails in `assets/img/` or use Open Graph images from URLs if feasible
+- Reuse `.project-card`-style layout or create `.artifact-card` (compact horizontal or square thumbnail + text)
+
+**Placement:** Work section in [index.html](index.html), under each role entry.
