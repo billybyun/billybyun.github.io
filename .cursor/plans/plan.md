@@ -33,9 +33,9 @@ Create the ML domain structure and first concept page. Build step by step.
 - Reuse layout/styling from [index.html](index.html) (sidebar, top-nav, section cards)
 - **Top nav:** Same banner as main page (Robotics, BCI, ML, Tutorials, Work, About). ML highlighted with `.primary` to show current context. Other links point to `../#section-id`.
 - **No** domain-specific nav (Demos, Concepts, Lit Reviews) – those are in-page sections reached by scrolling.
-- **Demos section:** Placeholder text if empty, or migrate the two ML project cards from index (Drug Discovery, Science Automation)
-- **Concepts section:** Link to `concepts/vlm.html` (Vision-Language Models)
-- **Lit Reviews section:** Placeholder list (e.g., "Coming soon" or empty list)
+- **No Demos section** for ML (demos are for Robotics only).
+- **Concepts section:** Link to `concepts/vlm.html` (Vision-Language Models), no subtitle text.
+- **Lit Reviews section:** Heading only, no subtitle text.
 
 **URL:** `/ml/`
 
@@ -97,7 +97,7 @@ billybyun.github.io/
 | Decision | Recommendation |
 |----------|----------------|
 | **Styling** | Inline the same CSS from index.html into ml/index.html and vlm.html for Phase 1. |
-| **Demos content** | Start with placeholder ("No demos yet") unless migrating the two ML project cards. |
+| **Demos** | ML page has no Demos section (Robotics has demos). |
 | **Back navigation** | Sidebar on ml/index.html links to `../` for home. |
 | **ML page nav** | Same top banner as main page (Robotics, BCI, ML, Tutorials, Work, About). ML highlighted. No Demos/Concepts/Lit Reviews nav – those are in-page sections. |
 
