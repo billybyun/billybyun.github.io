@@ -9,6 +9,7 @@ todos:
     content: Create VLM concept page (ml/concepts/vlm.html)
   - id: step3
     content: Update main nav in index.html (ML link to ml/)
+    status: completed
 isProject: false
 ---
 
