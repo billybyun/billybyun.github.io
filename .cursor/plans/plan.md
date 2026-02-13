@@ -4,6 +4,7 @@ overview: "Phase 1 implements the ML domain structure: create ml/index.html with
 todos:
   - id: step1
     content: Create ML domain page (ml/index.html)
+    status: completed
   - id: step2
     content: Create VLM concept page (ml/concepts/vlm.html)
   - id: step3
