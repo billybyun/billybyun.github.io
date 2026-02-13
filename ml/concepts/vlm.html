@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vision-Language Models (VLM) – Billy Byun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body>
+  <div class="page">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="avatar">
+          <img src="../../assets/img/profile_billy.jpeg" alt="Billy Byun">
+        </div>
+        <div class="name">Billy Byun</div>
+        <div class="role">ML Scientist / Research Engineer</div>
+        <div class="location">Bay Area, CA</div>
+
+        <ul class="sidebar-links">
+          <li>
+            <span class="icon">←</span>
+            <a href="../">Back to ML</a>
+          </li>
+          <li>
+            <span class="icon">🏢</span>
+            <span>Precision Neuroscience</span>
+          </li>
+          <li>
+            <span class="icon">🤖</span>
+            <span>Robotics · Multimodal AI · ML · BCI</span>
+          </li>
+          <li>
+            <span class="icon">🐙</span>
+            <a href="https://github.com/billybyun" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <span class="icon">🔗</span>
+            <a href="https://www.linkedin.com/in/yoon-woo-billy-byun-10078a36/" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <span class="icon">🎓</span>
+            <a href="https://scholar.google.com/citations?user=rSfVwEYAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <nav class="top-nav">
+          <a href="../../">Home</a>
+          <a href="../../#robotics">Robotics</a>
+          <a href="../../#bci">Brain Computer Interface (BCI)</a>
+          <a href="../" class="primary">ML</a>
+          <a href="../../#tutorials">Tutorials</a>
+          <a href="../../#work">Work</a>
+          <a href="../../#about">About</a>
+        </nav>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;">
+          <a href="../">ML</a> → Concepts → VLM
+        </p>
+
+        <section class="section">
+          <h2>Vision-Language Models (VLM)</h2>
+          <p>
+            Vision-Language Models are neural networks that jointly process images and text.
+            They combine a vision encoder (which extracts visual features from images) with
+            a language model (which generates or understands text), connected by a projection
+            layer that aligns visual and linguistic representations in a shared space.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Core Architecture</h2>
+          <ul class="bullets">
+            <li><strong>Vision encoder</strong> – Typically a pretrained model (e.g., ViT, ResNet) that outputs image embeddings.</li>
+            <li><strong>Projector</strong> – Maps vision embeddings into the language model’s embedding space (e.g., Q-Former, linear layer).</li>
+            <li><strong>LLM</strong> – Receives projected image tokens + text tokens and generates output (captions, answers, actions).</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Why It Matters</h2>
+          <p>
+            VLMs are central to robotics and embodied AI: they enable robots to follow
+            natural language instructions (“pick up the red block”) by grounding language
+            in visual perception. In BCI, similar multimodal architectures can connect
+            neural signals to language for communication. For general ML, VLMs unlock
+            zero-shot visual reasoning, image captioning, and visual question answering
+            without task-specific fine-tuning.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Upcoming Literature Reviews</h2>
+          <ul class="bullets">
+            <li>Flamingo, BLIP-2, LLaVA – TBD</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Billy Byun · ML
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
