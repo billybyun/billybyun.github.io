@@ -96,7 +96,7 @@ billybyun.github.io/
 
 | Decision | Recommendation |
 |----------|----------------|
-| **Styling** | Inline the same CSS from index.html into ml/index.html and vlm.html for Phase 1. |
+| **Styling** | Shared [css/layout.css](css/layout.css) – both index.html and ml/index.html link to it. Avatar size via `--avatar-size`. |
 | **Demos** | ML page has no Demos section (Robotics has demos). |
 | **Back navigation** | Sidebar on ml/index.html links to `../` for home. |
 | **ML page nav** | Same top banner as main page (Robotics, BCI, ML, Tutorials, Work, About). ML highlighted. No Demos/Concepts/Lit Reviews nav – those are in-page sections. |
